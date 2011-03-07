@@ -1,0 +1,7 @@
+%h1#shout=@shout
+
+-form_for @new_shout do |f|
+  = f.label :message
+  = f.text_field :message
+  
+  =f.submit "save"
