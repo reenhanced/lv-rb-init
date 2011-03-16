@@ -68,3 +68,10 @@ a img {
 #shout span {
   color: red;
 }
+
+/* line 11, ../../../app/stylesheets/screen.sass */
+#new_shouts {
+  text-align: center;
+  padding-top: 20px;
+  color: #555555;
+}
