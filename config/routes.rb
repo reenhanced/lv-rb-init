@@ -1,5 +1,9 @@
 Ideashouter::Application.routes.draw do
-  resources :shouts
+  devise_for :admins
+
+  namespace :admin do
+    resources :shouts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,4 +10,18 @@
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body
+    #flash
+      - [:notice, :alert].each do |flash|
+        - output = send(flash)
+        - if output.present?
+          %div{:class => flash}= output
+          
+    %nav#admin
+      -if admin_signed_in?
+        = link_to "Admin", admin_shouts_path
+        |
+        =link_to "Signout", destroy_admin_session_path
+      - else
+        =link_to "Login", new_admin_session_path
+        
     = yield
