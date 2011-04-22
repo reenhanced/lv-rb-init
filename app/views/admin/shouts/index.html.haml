@@ -1,0 +1,9 @@
+=link_to "ADD SHOUT!", new_admin_shout_path
+%table
+  -@shouts.each do |shout|
+    %tr
+      %td=shout
+      %td
+        %ul
+          %li=link_to 'edit', edit_admin_shout_path(shout)
+          %li=link_to 'delete', admin_shout_path(shout), :method => :delete

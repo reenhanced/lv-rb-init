@@ -11,6 +11,8 @@
 #
 
 class Shout < ActiveRecord::Base
+  validates :message, :presence => true
+  
   def to_s
     message
   end

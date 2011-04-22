@@ -2,13 +2,7 @@ class ShoutsController < ApplicationController
   # GET /shouts
   # GET /
   def index
-    @shout     = Shout.order('RANDOM()').first
-    @new_shout = Shout.new
-  end
-  
-  # POST /shouts
-  def create
-    @shout = Shout.create! params[:shout]
-    redirect_to '/'
+    @shout = Shout.order('RANDOM()').first
+    @shout = "No shouts! :(" if @shout.blank?
   end
 end
